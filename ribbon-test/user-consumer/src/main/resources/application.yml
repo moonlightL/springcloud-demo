@@ -1,0 +1,13 @@
+server:
+  port: 80
+ 
+spring:
+  application:
+    name: user-web
+      
+eureka:
+  client:
+    register-with-eureka: false # 不向注册中心注册自己
+    fetch-registry: true        # 是否检索服务
+    service-url:
+      defaultZone: http://localhost:9000/eureka/  # 注册中心访问地址
