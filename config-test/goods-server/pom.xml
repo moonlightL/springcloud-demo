@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.extlight.springcloud</groupId>
+    <artifactId>config-test</artifactId>
+    <version>${parent-version}</version>
+  </parent>
+  
+  <artifactId>goods-server</artifactId>
+  <name>goods-server</name>
+  
+  <dependencies>
+  	<!-- common api -->
+  	<dependency>
+  		<groupId>com.extlight.springcloud</groupId>
+  		<artifactId>common-api</artifactId>
+  		<version>${parent-version}</version>
+  	</dependency>
+  
+  	<!-- springmvc -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	<!-- eureka 客户端 -->
+    <dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	</dependency>
+	
+  </dependencies>
+</project>

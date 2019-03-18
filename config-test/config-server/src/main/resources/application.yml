@@ -1,0 +1,31 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: CONFIG
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/moonlightL/spring-cloud-config.git
+          username: moonlightL
+          password: shijiemori960
+  rabbitmq:
+    host: 192.168.2.13
+    port: 5672
+    username: light
+    password: light
+                    
+eureka:
+  instance:
+      instance-id: config-api
+  client:
+      service-url:
+          defaultZone: http://localhost:9000/eureka/  # 注册中心访问地址
+          
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 暴露接口
