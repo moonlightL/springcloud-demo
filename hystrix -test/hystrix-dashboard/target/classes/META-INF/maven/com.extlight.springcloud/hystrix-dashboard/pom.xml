@@ -8,12 +8,11 @@
     <version>${parent-version}</version>
   </parent>
   
-  
   <artifactId>hystrix-dashboard</artifactId>
   <name>hystrix-dashboard</name>
   
   <dependencies>
-  	<!-- hystrix-dashboard -->
+    <!-- hystrix-dashboard -->
 	<dependency>
 	    <groupId>org.springframework.cloud</groupId>
 	    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>

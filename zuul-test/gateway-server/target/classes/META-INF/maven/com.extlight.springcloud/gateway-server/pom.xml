@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.extlight.springcloud</groupId>
+    <artifactId>zuul-test</artifactId>
+    <version>${parent-version}</version>
+  </parent>
+  
+  <artifactId>gateway-server</artifactId>
+  <name>gateway-server</name>
+  
+  <dependencies>
+  	<!-- common api -->
+  	<dependency>
+  		<groupId>com.extlight.springcloud</groupId>
+  		<artifactId>common-api</artifactId>
+  		<version>${parent-version}</version>
+  	</dependency>
+  	
+  	<!-- eureka 客户端 -->
+    <dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	</dependency>
+
+	<!-- zuul 网关 -->
+	<dependency>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+	</dependency>
+  </dependencies>
+</project>

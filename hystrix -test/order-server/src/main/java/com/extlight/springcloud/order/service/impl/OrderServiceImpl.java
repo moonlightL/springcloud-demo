@@ -7,8 +7,11 @@ import com.extlight.springcloud.common.client.GoodsServiceClient;
 import com.extlight.springcloud.common.model.Order;
 import com.extlight.springcloud.common.vo.Result;
 import com.extlight.springcloud.order.service.OrderService;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
+//@DefaultProperties(defaultFallback = "defaultByHystrix")
 public class OrderServiceImpl implements OrderService{
 	
 //	@Autowired
@@ -17,6 +20,7 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired
 	private GoodsServiceClient goodsServiceClient;
 
+//	@HystrixCommand
 	@Override
 	public void placeOrder(Order order) throws Exception{
 		
@@ -31,4 +35,8 @@ public class OrderServiceImpl implements OrderService{
 			System.out.println(result.getMsg());
 		}
 	}
+	
+//	public void defaultByHystrix() {
+//		System.out.println("商品服务系统异常");
+//	}
 }

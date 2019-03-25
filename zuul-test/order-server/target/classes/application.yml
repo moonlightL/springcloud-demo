@@ -1,0 +1,24 @@
+server:
+    port: 8100
+
+spring:
+  application:
+    name: ORDER
+    
+eureka:
+    instance:
+        instance-id: order-api-8100
+        prefer-ip-address: true # 访问路径可以显示 IP
+    client:
+        service-url:
+            defaultZone: http://localhost:9000/eureka/  # 注册中心访问地址
+
+feign:
+  hystrix:
+    enabled: true
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"        

@@ -12,8 +12,4 @@ eureka:
     client:
         service-url:
             defaultZone: http://localhost:9000/eureka/  # 注册中心访问地址
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"            
+       

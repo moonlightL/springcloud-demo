@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.extlight.springcloud.common.model.Goods;
 import com.extlight.springcloud.goods.service.GoodsService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
 public class GoodsServiceImpl implements GoodsService{
@@ -22,7 +21,6 @@ public class GoodsServiceImpl implements GoodsService{
 	}
 
 	@Override
-	@HystrixCommand(fallbackMethod = "defaultByHystrix")
 	public Goods findGoodsById(String goodsId) {
 		Goods goods = data.get(goodsId);
 		if (goods == null) {
@@ -30,10 +28,6 @@ public class GoodsServiceImpl implements GoodsService{
 		}
 		
 		return goods;
-	}
-	
-	public Goods defaultByHystrix(String goodsId) {
-		return new Goods("-1", "商品", "默认商品", 8081);
 	}
 
 }

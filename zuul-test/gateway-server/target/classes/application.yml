@@ -1,0 +1,24 @@
+server:
+    port: 9600
+ 
+spring:
+    application:
+        name: gateway
+
+eureka:
+    instance:
+        instance-id: gateway-9600
+        prefer-ip-address: true 
+    client:
+        service-url:
+            defaultZone: http://localhost:9000/eureka/  # 注册中心访问地址
+zuul:
+#  prefix: /api
+  sensitive-headers: # 全局忽略敏感头，即允许接收 cookie 信息   
+  routes:
+    extlight:
+      path: /extlight/**
+      service-id: ORDER    
+  ignored-patterns:
+    - /order/order/**    
+           
