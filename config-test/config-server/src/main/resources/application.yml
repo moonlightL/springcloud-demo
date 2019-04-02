@@ -10,7 +10,7 @@ spring:
         git:
           uri: https://github.com/moonlightL/spring-cloud-config.git
           username: moonlightL
-          password: shijiemori960
+          password: xxx
   rabbitmq:
     host: 192.168.2.13
     port: 5672
